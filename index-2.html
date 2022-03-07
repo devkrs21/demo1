@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hello</title>
+	<style>
+		body {
+			background-color: #f1f1f1;
+			font-family: "Google Sans";
+			padding: 15px;
+		}
+
+		.container {
+			max-width: 600px;
+			background-color: white;
+			margin: auto;
+			border-radius: 10px;
+			box-shadow: 1px 1px 3px #ccc;
+		}
+
+		.chatbox {
+			padding: 15px;
+		}
+
+		.right {
+			text-align: right;
+		}
+
+		.chatleft,
+		.chatright {
+			display: inline-block;
+			padding: 3px 12px;
+			background-color: #bbb;
+			border-radius: 8px;
+			margin-top: 3px;
+		}
+
+		.time {
+			padding: 30px 30px 0 30px;
+			display: inline-block;
+		}
+
+		img {
+			border-radius: 10px;
+		}
+
+		.btn {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		#text {
+			width: -webkit-fill-available;
+			background-color: rgb(224, 215, 215);
+			border-radius: 2px;
+			border: 0px;
+			padding: 5px;
+
+		}
+
+		.left-btn>button {
+			background-color: rgb(9, 139, 133);
+			color: rgb(255, 255, 255);
+			padding: 5px;
+			border-radius: 6px;
+			font-weight: 900;
+		}
+
+		.right-btn>button {
+			background-color: rgb(7, 112, 51);
+			color: rgb(255, 255, 255);
+			padding: 5px;
+			border-radius: 6px;
+			font-weight: 900;
+		}
+
+		.left-btn,
+		.right-btn {
+			display: flex;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<span class="time" id="time"></span>
+		<div class="chatbox" id="chatbox">
+			<!-- <div class="left">
+				<span class="chatleft">This is a chat</span>
+			</div>
+			<div class="right">
+				<span class="chatright">This is a chat 2</span>
+			</div> -->
+		</div>
+		<div class="newmsg" style="background-color: black;">
+			<input id="text" type="text" name="" value="" placeholder="😂 Message..." >
+			<div class="btn">
+				<div class="left-btn">
+					<button id="sendleft" onclick="sendleft()" type="button" name="button">Send Left</button>
+					<button id="sendleftimg" onclick="sendleftimg()" type="button" name="button">Send Left Img</button>
+				</div>
+				<div class="right-btn">
+					<button id="sendright" onclick="sendright()" type="button" name="button">Send Right</button>
+					<button id="sendrightimg" onclick="sendrightimg()" type="button" name="button">Send Right
+						Img</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+
+		var a;
+		//alert(time);
+
+
+
+		function sendleft() {
+			a = document.getElementById('text').value;
+			if (a != 0) {
+
+				var b = document.getElementById('chatbox').innerHTML;
+				//alert(b);
+				var c = '<div class="left"><span class="chatleft">' + a + '</span></div>';
+				document.getElementById('chatbox').innerHTML = b + c;
+				document.getElementById('text').value = "";
+				var today = new Date();
+				var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+				document.getElementById('time').innerHTML = "Last seen at: " + time;
+			} else {
+				alert('Pls type msg...');
+			}
+		}
+		function sendleftimg() {
+			a = document.getElementById('text').value;
+			if (a != 0) {
+				var b = document.getElementById('chatbox').innerHTML;
+				//alert(b);
+				var c = '<div class="left"><img src="' + a + '" width="120px"></div>';
+				document.getElementById('chatbox').innerHTML = b + c;
+				document.getElementById('text').value = "";
+				var today = new Date();
+				var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+				document.getElementById('time').innerHTML = "Last seen at: " + time;
+			} else {
+				alert('Pls Send img...');
+			}
+		}
+
+		function sendright() {
+			a = document.getElementById('text').value;
+			if (a != 0) {
+				var b = document.getElementById('chatbox').innerHTML;
+				//alert(b);
+				var c = '<div class="right"><span class="chatright">' + a + '</span></div>';
+				document.getElementById('chatbox').innerHTML = b + c;
+				document.getElementById('text').value = "";
+				var today = new Date();
+				var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+				document.getElementById('time').innerHTML = "Last seen at: " + time;
+			} else {
+				alert('Pls type msg...');
+			}
+		}
+		function sendrightimg() {
+			a = document.getElementById('text').value;
+			if (a != 0) {
+				var b = document.getElementById('chatbox').innerHTML;
+				//alert(b);
+				var c = '<div class="right"><img src="' + a + '" width="120px"></div>';
+				document.getElementById('chatbox').innerHTML = b + c;
+				document.getElementById('text').value = "";
+				var today = new Date();
+				var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+				document.getElementById('time').innerHTML = "Last seen at: " + time;
+			} else {
+				alert('Pls Send img...');
+			}
+		}
+
+
+
+		// if (a >= b) {
+		// 	console.log('Student is First division');
+		// }else if (a >= c) {
+		// 	console.log('Student is Second division');
+		// }else {
+		// 	console.log('Student is fail');
+		// }
+
+	</script>
+	̥
+</body>
+
+</html>
